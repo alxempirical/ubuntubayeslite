@@ -3,7 +3,4 @@ language: python
 services:
   - docker
 script:
-  - >
-    docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" &&
-      docker build -t empiricalsys/ubuntubayeslite . &&
-      docker push empiricalsys/ubuntubayeslite
+  - ./build.sh && ./maybe_push.sh
